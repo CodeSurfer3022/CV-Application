@@ -19,7 +19,7 @@ function Header(props) {
                     type="name"
                     id="name"
                 />
-                <h3>{props.name}</h3>
+                <h2>{props.name}</h2>
             </form>
             <form onSubmit={props.onSubmit}>
                 <input
