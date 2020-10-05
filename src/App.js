@@ -11,15 +11,21 @@ class App extends Component {
         this.state = {
             location: "Bangalore, IN",
             name: "Chandra Prakash",
-            mail: "chan@mail.com"
-
+            mail: "chan@mail.com",
+            job: "Software Engineer",
+            company: "Ribbon Communications",
+            employment: "July 2017 - Present",
+            campus: "Vellore, IN",
+            college: "VIT University",
+            study: "July 2013 - May 2017",
+            stream: "Computer Science and Engineering"
         }
     }
 
     handleClick = (e) => {
         const element = e.target;
         const tag = e.target.tagName;
-        if(tag === 'DIV' || tag === 'FORM' || tag === 'INPUT') return;
+        if(tag === 'DIV' || tag === 'FORM' || tag === 'INPUT' || tag === 'H3') return;
 
         // show the input and hide the element
         const form = element.parentNode;
@@ -61,8 +67,20 @@ class App extends Component {
                     name={this.state.name}
                     mail={this.state.mail}
                 />
-                <Employment/>
-                <Education/>
+                <Employment
+                    onSubmit={this.onSubmit}
+                    handleChange={this.handleChange}
+                    job={this.state.job}
+                    company={this.state.company}
+                    employment={this.state.employment}
+                />
+                <Education
+                    onSubmit={this.onSubmit}
+                    handleChange={this.handleChange}
+                    campus={this.state.campus}
+                    college={this.state.college}
+                    study={this.state.study}
+                />
                 <Projects/>
                 <Skills/>
             </div>
