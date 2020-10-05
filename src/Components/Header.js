@@ -1,11 +1,35 @@
 import React from 'react';
 
-function Header() {
+function Header(props) {
     return (
         <div className="header flex">
-            <p>Bangalore, India</p>
-            <h3>Chandra Prakash Reddy</h3>
-            <a href="https://github.com/CodeSurfer3022">Github</a>
+            <form onSubmit={props.onSubmit}>
+                <input
+                    onChange={props.handleChange}
+                    value={props.location}
+                    type="name"
+                    id="location"
+                />
+                <p>{props.location}</p>
+            </form>
+            <form onSubmit={props.onSubmit}>
+                <input
+                    onChange={props.handleChange}
+                    value={props.name}
+                    type="name"
+                    id="name"
+                />
+                <h3>{props.name}</h3>
+            </form>
+            <form onSubmit={props.onSubmit}>
+                <input
+                    onChange={props.handleChange}
+                    value={props.mail}
+                    type="name"
+                    id="mail"
+                />
+                <p>{props.mail}</p>
+            </form>
         </div>
     )
 }

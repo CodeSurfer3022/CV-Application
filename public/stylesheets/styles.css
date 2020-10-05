@@ -4,6 +4,19 @@
     align-items: center;
 }
 
+.App * *:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    display: none;
+}
+
+/* style each component*/
 .header {
     background: #337be5;
 }
@@ -14,6 +27,10 @@
 
 .education {
     background: antiquewhite;
+}
+
+.projects {
+    background: beige;
 }
 
 .skills {
