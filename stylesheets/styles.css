@@ -1,0 +1,41 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.App * *:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    display: none;
+}
+
+.description {
+    background: darkcyan;
+}
+/* style each component*/
+.header {
+    background: #337be5;
+}
+
+.employment {
+    background: lightgray;
+}
+
+.education {
+    background: antiquewhite;
+}
+
+.projects {
+    background: beige;
+}
+
+.skills {
+    background: azure;
+}
