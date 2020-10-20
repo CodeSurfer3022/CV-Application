@@ -33,6 +33,10 @@ function Employment(props) {
                     <p>{props.employment}</p>
                 </form>
             </div>
+            <div className="description">
+                <ul></ul>
+                <button>Add details</button>
+            </div>
         </div>
     )
 }

@@ -33,6 +33,10 @@ function Education(props) {
                     <p>{props.study}</p>
                 </form>
             </div>
+            <div className="description">
+                <ul></ul>
+                <button>Add details</button>
+            </div>
         </div>
     )
 }

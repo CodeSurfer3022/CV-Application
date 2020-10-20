@@ -25,7 +25,7 @@ class App extends Component {
     handleClick = (e) => {
         const element = e.target;
         const tag = e.target.tagName;
-        if(tag === 'DIV' || tag === 'FORM' || tag === 'INPUT' || tag === 'H3') return;
+        if(tag === 'DIV' || tag === 'FORM' || tag === 'INPUT' || tag === 'H3' || tag === 'BUTTON') return;
 
         // show the input and hide the element
         const form = element.parentNode;

@@ -16,6 +16,9 @@ input {
     display: none;
 }
 
+.description {
+    background: darkcyan;
+}
 /* style each component*/
 .header {
     background: #337be5;
