@@ -1,3 +1,3 @@
 # A CV application
 
-Live demo: https://codesurfer3022.github.io/Cv-application/
+Live demo: https://chandraprakash-dev.github.io/Cv-application/
