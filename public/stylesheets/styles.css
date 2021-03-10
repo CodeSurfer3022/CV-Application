@@ -1,3 +1,7 @@
+body {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
 header {
     height: 100px;
     background: red;
@@ -33,9 +37,22 @@ input {
 .description {
     background: darkcyan;
 }
+
 /* style each component*/
-.header {
+.general {
     background: #337be5;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .employment {
