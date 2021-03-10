@@ -25,15 +25,19 @@ class App extends Component {
     handleClick = (e) => {
         const element = e.target;
         const tag = e.target.tagName;
-        if(tag === 'DIV' || tag === 'FORM' || tag === 'INPUT' || tag === 'H3' || tag === 'BUTTON') return;
-
+        console.log(tag)
+        if(tag === 'DIV' || tag === 'INPUT' || tag === 'IMG' || tag === 'BUTTON') return;
+        //
         // show the input and hide the element
-        const form = element.parentNode;
-        const input = element.previousSibling;
-        console.log(form, input);
+        const div = element.parentNode;
+        console.log(div.id);
 
-        element.classList.add('hidden');
-        input.style.display = 'block';
+        const input = document.createElement('input');
+        input.value = element.textContent;
+        input.id = div.id;
+
+        div.removeChild(div.lastElementChild);
+        div.appendChild(input);
     }
 
     onSubmit = (e) => {
@@ -61,11 +65,11 @@ class App extends Component {
         return (
             <div className="App" onClick={this.handleClick}>
                 <General
-                    onSubmit={this.onSubmit}
-                    handleChange={this.handleChange}
-                    location={this.state.location}
-                    name={this.state.name}
-                    mail={this.state.mail}
+                    // onSubmit={this.onSubmit}
+                    // handleChange={this.handleChange}
+                    // location={this.state.location}
+                    // name={this.state.name}
+                    // mail={this.state.mail}
                 />
                 <Employment
                     onSubmit={this.onSubmit}

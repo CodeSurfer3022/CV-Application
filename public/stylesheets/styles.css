@@ -11,15 +11,13 @@ header {
     border: 2px solid blue;
     margin: 20px auto;
     padding: 20px;
-    width: 80vw;
+    width: 750px;
     height: 500px;
     overflow-y: scroll;
 }
 
 .flex {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .App * *:hover {
@@ -30,10 +28,6 @@ header {
     display: none;
 }
 
-input {
-    display: none;
-}
-
 .description {
     background: darkcyan;
 }
@@ -41,6 +35,11 @@ input {
 /* style each component*/
 .general {
     background: #337be5;
+    position: relative;
+}
+
+.general div {
+    flex: 1;
 }
 
 .profile-pic {
@@ -48,11 +47,22 @@ input {
     overflow: hidden;
     height: 100px;
     width: 100px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+#links div{
+    margin-left: 100px;
 }
 
 .employment {
