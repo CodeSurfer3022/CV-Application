@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import Header from "./Components/Header";
+import General from "./Components/General";
 import Employment from "./Components/Employment";
 import Education from "./Components/Education";
 import Skills from "./Components/Skills";
 import Projects from "./Components/Projects";
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             location: "Bangalore, IN",
             name: "Chandra Prakash",
@@ -60,7 +60,7 @@ class App extends Component {
     render() {
         return (
             <div className="App" onClick={this.handleClick}>
-                <Header
+                <General
                     onSubmit={this.onSubmit}
                     handleChange={this.handleChange}
                     location={this.state.location}
