@@ -11,7 +11,7 @@ function handleClick(e) {
     console.log(element, tag);
     const active = (document.querySelector('.general').querySelector('input:not(.none)'));
     console.log(active)
-    if(active) {
+    if(active && tag !== 'INPUT') {
         active.classList.add('none');
         active.previousElementSibling.classList.remove('none');
     }
@@ -40,58 +40,53 @@ function onSubmit (e) {
     element.classList.remove('hidden');
 }
 
-function handleChange (e) {
-    const {value, id:name} = e.target;
-    console.log(value, name);
-    this.setState({
-        [name]: value
-    })
-}
-
-
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            location: "Bangalore, IN",
-            name: "Chandra Prakash",
-            mail: "chan@mail.com",
-            job: "Software Engineer",
-            company: "Ribbon Communications",
-            employment: "July 2017 - Present",
-            campus: "Vellore, IN",
-            college: "VIT University",
-            study: "July 2013 - May 2017",
-            stream: "Computer Science and Engineering"
+            firstName: "First Name",
+            lastName: "Last Name",
+            designation: "Designation",
+            city: "City, Country",
+            phone: "Phone",
+            email: "Email",
+            linkedin: "Linkedin",
+            github: "Github"
         }
+    }
+
+    handleChange = (e) => {
+        const value = e.target.value;
+        const id = e.target.parentNode.id;
+        console.log(value, id);
+        this.setState({
+            [id]: value
+        })
     }
 
     render() {
         return (
             <div className="App" onClick={handleClick}>
                 <General
-                    // onSubmit={this.onSubmit}
-                    // handleChange={this.handleChange}
-                    // location={this.state.location}
-                    // name={this.state.name}
-                    // mail={this.state.mail}
-                />
-                <Employment
-                    onSubmit={this.onSubmit}
                     handleChange={this.handleChange}
-                    job={this.state.job}
-                    company={this.state.company}
-                    employment={this.state.employment}
+                    details={this.state}
                 />
-                <Education
-                    onSubmit={this.onSubmit}
-                    handleChange={this.handleChange}
-                    campus={this.state.campus}
-                    college={this.state.college}
-                    study={this.state.study}
-                />
-                <Projects/>
-                <Skills/>
+                {/*<Employment*/}
+                {/*    onSubmit={this.onSubmit}*/}
+                {/*    handleChange={this.handleChange}*/}
+                {/*    job={this.state.job}*/}
+                {/*    company={this.state.company}*/}
+                {/*    employment={this.state.employment}*/}
+                {/*/>*/}
+                {/*<Education*/}
+                {/*    onSubmit={this.onSubmit}*/}
+                {/*    handleChange={this.handleChange}*/}
+                {/*    campus={this.state.campus}*/}
+                {/*    college={this.state.college}*/}
+                {/*    study={this.state.study}*/}
+                {/*/>*/}
+                {/*<Projects/>*/}
+                {/*<Skills/>*/}
             </div>
         )
     }

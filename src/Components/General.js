@@ -8,20 +8,20 @@ function General(props) {
     <div className="general flex">
       <div>
         <div id="firstName">
-          <h1>First Name</h1>
-          <input value="First Name" className="none"/>
+          <h1>{props.details.firstName}</h1>
+          <input onChange={props.handleChange} value={props.details.firstName} className="none"/>
         </div>
         <div id="lastName">
-          <h1>Last Name</h1>
-          <input value="Last Name" className="none"/>
+          <h1>{props.details.lastName}</h1>
+          <input onChange={props.handleChange} value={props.details.lastName} className="none"/>
         </div>
         <div id="designation">
-          <p>Designation</p>
-          <input value="Designation" className="none"/>
+          <p>{props.details.designation}</p>
+          <input onChange={props.handleChange} value={props.details.designation} className="none"/>
         </div>
         <div id="city">
-          <p>City, Country</p>
-          <input value="City, Country" className="none"/>
+          <p>{props.details.city}</p>
+          <input onChange={props.handleChange} value={props.details.city} className="none"/>
         </div>
       </div>
       <div>
@@ -30,25 +30,25 @@ function General(props) {
         </div>
       </div>
       <div id="links">
-        <div>
+        <div id="phone">
           <FontAwesomeIcon icon={faPhoneAlt}/>
-          <span>Phone</span>
-          <input value="Phone" className="none" />
+          <span>{props.details.phone}</span>
+          <input onChange={props.handleChange} value={props.details.phone} className="none" />
         </div>
-        <div>
+        <div id="email">
           <FontAwesomeIcon icon={faEnvelope}/>
-          <span>Email</span>
-          <input value="Email" className="none" />
+          <span>{props.details.email}</span>
+          <input onChange={props.handleChange} value={props.details.email} className="none" />
         </div>
-        <div>
+        <div id="linkedin">
           <FontAwesomeIcon icon={faLinkedin}/>
-          <span>Linkedin</span>
-          <input value="Linkedin" className="none" />
+          <span>{props.details.linkedin}</span>
+          <input onChange={props.handleChange} value={props.details.linkedin} className="none" />
         </div>
-        <div>
+        <div id="github">
           <FontAwesomeIcon icon={faGithubSquare}/>
-          <span>Github</span>
-          <input value="Github" className="none" />
+          <span>{props.details.github}</span>
+          <input onChange={props.handleChange} value={props.details.github} className="none" />
         </div>
       </div>
     </div>
