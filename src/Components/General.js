@@ -3,9 +3,30 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faLinkedin, faGithubSquare} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faPhoneAlt} from '@fortawesome/free-solid-svg-icons'
 
+function handleClick(e) {
+  const element = e.target;
+  const tag = e.target.tagName;
+  console.log(element, tag);
+  const active = (document.querySelector('.general').querySelector('input:not(.none)'));
+  console.log(active)
+  if(active && tag !== 'INPUT') {
+    active.classList.add('none');
+    active.previousElementSibling.classList.remove('none');
+  }
+
+  if(tag === 'DIV' || tag === 'INPUT' || tag === 'IMG' || tag === 'BUTTON' ||
+    tag === 'svg' || tag === 'path') return;
+
+  // show the input and hide the element
+  element.classList.add('none');
+  const input = element.nextElementSibling;
+  console.log(input);
+  input.classList.remove('none');
+}
+
 function General(props) {
   return (
-    <div className="general flex">
+    <div className="general flex" onClick={handleClick}>
       <div>
         <div id="firstName">
           <h1>{props.details.firstName}</h1>
