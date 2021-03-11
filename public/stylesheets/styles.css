@@ -2,6 +2,10 @@ body {
     font-family: "Helvetica Neue", sans-serif;
 }
 
+.none {
+    display: none;
+}
+
 header {
     height: 100px;
     background: red;
@@ -11,7 +15,7 @@ header {
     border: 2px solid blue;
     margin: 20px auto;
     padding: 20px;
-    width: 750px;
+    width: 800px;
     height: 500px;
     overflow-y: scroll;
 }
@@ -62,7 +66,8 @@ img {
 }
 
 #links div{
-    margin-left: 100px;
+    margin-left: 50px;
+    padding: 10px;
 }
 
 .employment {

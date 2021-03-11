@@ -5,6 +5,50 @@ import Education from "./Components/Education";
 import Skills from "./Components/Skills";
 import Projects from "./Components/Projects";
 
+function handleClick(e) {
+    const element = e.target;
+    const tag = e.target.tagName;
+    console.log(element, tag);
+    const active = (document.querySelector('.general').querySelector('input:not(.none)'));
+    console.log(active)
+    if(active) {
+        active.classList.add('none');
+        active.previousElementSibling.classList.remove('none');
+    }
+
+    if(tag === 'DIV' || tag === 'INPUT' || tag === 'IMG' || tag === 'BUTTON' ||
+      tag === 'svg' || tag === 'path') return;
+
+    // show the input and hide the element
+    element.classList.add('none');
+    const input = element.nextElementSibling;
+    console.log(input);
+    input.classList.remove('none');
+
+}
+
+function onSubmit (e) {
+    e.preventDefault();
+    console.log('ok')
+    const form = e.target;
+    const input = form.firstElementChild;
+    const element = form.lastElementChild;
+    console.log(input, element);
+
+    // hide input and show the element
+    input.style.display = 'none';
+    element.classList.remove('hidden');
+}
+
+function handleChange (e) {
+    const {value, id:name} = e.target;
+    console.log(value, name);
+    this.setState({
+        [name]: value
+    })
+}
+
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -22,48 +66,9 @@ class App extends Component {
         }
     }
 
-    handleClick = (e) => {
-        const element = e.target;
-        const tag = e.target.tagName;
-        console.log(tag)
-        if(tag === 'DIV' || tag === 'INPUT' || tag === 'IMG' || tag === 'BUTTON') return;
-        //
-        // show the input and hide the element
-        const div = element.parentNode;
-        console.log(div.id);
-
-        const input = document.createElement('input');
-        input.value = element.textContent;
-        input.id = div.id;
-
-        div.removeChild(div.lastElementChild);
-        div.appendChild(input);
-    }
-
-    onSubmit = (e) => {
-        e.preventDefault();
-        console.log('ok')
-        const form = e.target;
-        const input = form.firstElementChild;
-        const element = form.lastElementChild;
-        console.log(input, element);
-
-        // hide input and show the element
-        input.style.display = 'none';
-        element.classList.remove('hidden');
-    }
-
-    handleChange = (e) => {
-        const {value, id:name} = e.target;
-        console.log(value, name);
-        this.setState({
-            [name]: value
-        })
-    }
-
     render() {
         return (
-            <div className="App" onClick={this.handleClick}>
+            <div className="App" onClick={handleClick}>
                 <General
                     // onSubmit={this.onSubmit}
                     // handleChange={this.handleChange}

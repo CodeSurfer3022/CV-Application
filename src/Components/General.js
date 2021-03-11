@@ -7,10 +7,22 @@ function General(props) {
   return (
     <div className="general flex">
       <div>
-        <div id="firstName"><h1>First Name</h1></div>
-        <div><h1>Last Name</h1></div>
-        <div><p>Designation</p></div>
-        <div><p>City, Country</p></div>
+        <div id="firstName">
+          <h1>First Name</h1>
+          <input value="First Name" className="none"/>
+        </div>
+        <div id="lastName">
+          <h1>Last Name</h1>
+          <input value="Last Name" className="none"/>
+        </div>
+        <div id="designation">
+          <p>Designation</p>
+          <input value="Designation" className="none"/>
+        </div>
+        <div id="city">
+          <p>City, Country</p>
+          <input value="City, Country" className="none"/>
+        </div>
       </div>
       <div>
         <div className="profile-pic">
@@ -21,18 +33,22 @@ function General(props) {
         <div>
           <FontAwesomeIcon icon={faPhoneAlt}/>
           <span>Phone</span>
+          <input value="Phone" className="none" />
         </div>
         <div>
           <FontAwesomeIcon icon={faEnvelope}/>
           <span>Email</span>
+          <input value="Email" className="none" />
         </div>
         <div>
           <FontAwesomeIcon icon={faLinkedin}/>
           <span>Linkedin</span>
+          <input value="Linkedin" className="none" />
         </div>
         <div>
           <FontAwesomeIcon icon={faGithubSquare}/>
           <span>Github</span>
+          <input value="Github" className="none" />
         </div>
       </div>
     </div>
