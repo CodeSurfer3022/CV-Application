@@ -1,43 +1,86 @@
-import React from 'react';
+import React, {Component} from 'react';
+import EducationComponent from "./EducationComponent";
 
-function Education(props) {
+function handleClick(e) {
+  console.log(e.target);
+  const form = document.querySelector('form[name="educationsForm"]');
+  form.classList.remove('none');
+  form.querySelector('input').select();
+  e.target.classList.add('none');
+}
+
+function cancel(e) {
+  e.preventDefault();
+  const btn = document.querySelector('.educations').querySelector('#addForm');
+  console.log(btn);
+  const form = document.querySelector('form[name="educationsForm"]');
+  form.classList.add('none');
+  btn.classList.remove('none');
+}
+
+class Education extends Component{
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      educations: []
+    }
+  }
+
+  addEducation = (e) => {
+    e.preventDefault();
+    const {school, city, from, to, degree, description} = document.educationsForm;
+
+    this.setState((prevState) => {
+      return {
+        educations: [...prevState.educations, {
+          school: school.value,
+          degree: degree.value,
+          from: from.value,
+          to: to.value,
+          city: city.value,
+          description: description.value
+        }]
+      }
+    })
+
+    const close = document.querySelector('.jobs').querySelector('#closeForm');
+    close.click();
+  }
+
+  render() {
     return (
-        <div className="education">
-            <h3>Education</h3>
-            <div className="flex">
-                <form onSubmit={props.onSubmit}>
-                    <input
-                        onChange={props.handleChange}
-                        value={props.campus}
-                        type="name"
-                        id="campus"
-                    />
-                    <p>{props.campus}</p>
-                </form>
-                <form onSubmit={props.onSubmit}>
-                    <input
-                        onChange={props.handleChange}
-                        value={props.college}
-                        type="name"
-                        id="college"
-                    />
-                    <h4>{props.college}</h4>
-                </form>
-                <form onSubmit={props.onSubmit}>
-                    <input
-                        onChange={props.handleChange}
-                        value={props.study}
-                        type="name"
-                        id="study"
-                    />
-                    <p>{props.study}</p>
-                </form>
-            </div>
-            <div className="description">
-                <button>Add education</button>
-            </div>
+      <div className="educations">
+        <h3>Education</h3>
+        <div>
+          {this.state.educations.map(education => <EducationComponent details={education}/>)}
         </div>
+        <form className="none" name="educationsForm">
+          <label>University or School Name</label>
+          <input placeholder="University" name="school"/>
+
+          <label>Degree or stream</label>
+          <input placeholder="Degree" name="degree"/>
+
+          <label>From</label>
+          <input placeholder="DD/MM/YYYY" name="from"/>
+
+          <label>TO </label>
+          <input placeholder="DD/MM/YYYY or Present" name="to"/>
+
+          <label>City</label>
+          <input placeholder="City" name="city"/>
+
+          <label>Description</label>
+          <input placeholder="Responsibilities and achievements" name="description"/>
+
+          <button id="closeForm" onClick={cancel}>Cancel</button>
+          <button onClick={this.addEducation}>+ Education</button>
+        </form>
+        <button id="addForm" onClick={handleClick}>Add Education</button>
+      </div>
     )
+  }
 }
 
 export default Education;

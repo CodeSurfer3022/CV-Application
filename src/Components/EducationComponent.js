@@ -1,13 +1,12 @@
 import React from "react";
 
-function JobComponent(props) {
-  console.log(props.details)
+function EducationComponent(props) {
   return(
     <div>
       <div className="flex overview">
         <div>
-          <p>{props.details.role}</p>
-          <p>{props.details.company}</p>
+          <p>{props.details.school}</p>
+          <p>{props.details.degree}</p>
         </div>
         <div>
           <p>{props.details.from} - {props.details.to}</p>
@@ -22,4 +21,4 @@ function JobComponent(props) {
   )
 }
 
-export default JobComponent;
+export default EducationComponent;

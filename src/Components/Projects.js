@@ -45,7 +45,7 @@ class Projects extends Component{
           {this.state.projects.map(project => <div>
             {project.title}
             {project.description}
-            <button>Remove project</button>
+            <button>x</button>
           </div>)}
         </div>
         <form className="none" name="projectsForm">
