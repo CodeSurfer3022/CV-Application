@@ -34,8 +34,7 @@ function Education(props) {
                 </form>
             </div>
             <div className="description">
-                <ul></ul>
-                <button>Add details</button>
+                <button>Add education</button>
             </div>
         </div>
     )

@@ -56,10 +56,10 @@ class Projects extends Component{
             <input placeholder="A brief description of your project" name="description"/>
 
             <button id="closeForm" onClick={cancel}>Cancel</button>
-            <button onClick={this.addProject}>+ project</button>
+            <button type="submit" onClick={this.addProject}>+ project</button>
           </div>
         </form>
-        <button id="addForm" onClick={handleClick}>Add Project</button>
+        <button id="addForm" onClick={handleClick}>Add Projects</button>
       </div>
     )
   }

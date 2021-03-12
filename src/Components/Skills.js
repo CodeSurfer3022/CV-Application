@@ -52,7 +52,7 @@ class Skills extends Component {
             <button onClick={this.addSkill}>+ skill</button>
           </div>
         </form>
-        <button id="addForm" onClick={handleClick}>Add skill</button>
+        <button id="addForm" onClick={handleClick}>Add skills</button>
       </div>
     )
   }
