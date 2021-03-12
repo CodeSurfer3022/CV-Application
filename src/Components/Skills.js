@@ -31,20 +31,23 @@ class Skills extends Component {
     this.setState((prevState) => {
       return { skills: [...prevState.skills, skill]}
     })
-    const close = document.querySelector('#closeForm');
+    const close = document.querySelector('.skills').querySelector('#closeForm');
     close.click();
   }
 
   render() {
     return (
       <div className="skills">
+        <h3>Skills</h3>
         <div className="flex">
-          {this.state.skills.map(skill => <div className="skill">{skill}</div>)}
+          {this.state.skills.map(skill => <div className="skill">
+            {skill}
+            <button>x</button>
+          </div>)}
         </div>
         <form className="none" name="skillsForm">
           <div>
-            <label form="skills">Skills</label>
-            <input placeholder="Add your top skills!" name="skill"/>
+            <input id="skill" placeholder="Add your top skills!" name="skill"/>
             <button id="closeForm" onClick={cancel}>Cancel</button>
             <button onClick={this.addSkill}>+ skill</button>
           </div>
