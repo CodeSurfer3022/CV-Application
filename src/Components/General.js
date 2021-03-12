@@ -22,6 +22,7 @@ function handleClick(e) {
   const input = element.nextElementSibling;
   console.log(input);
   input.classList.remove('none');
+  input.select();
 }
 
 function General(props) {

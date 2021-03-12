@@ -2,8 +2,9 @@ import React, {Component} from "react";
 
 function handleClick(e) {
   console.log(e.target);
-  const form = document.querySelector('form[name="skills"]');
+  const form = document.querySelector('form[name="skillsForm"]');
   form.classList.remove('none');
+  form.querySelector('input').select();
   e.target.classList.add('none');
 }
 
@@ -11,13 +12,9 @@ function cancel(e) {
   e.preventDefault();
   const btn = document.querySelector('#addForm');
   console.log(btn);
-  const form = document.querySelector('form[name="skills"]');
+  const form = document.querySelector('form[name="skillsForm"]');
   form.classList.add('none');
   btn.classList.remove('none');
-}
-
-function addSkill() {
-
 }
 
 class Skills extends Component {
@@ -28,15 +25,28 @@ class Skills extends Component {
     }
   }
 
+  addSkill = (e) => {
+    e.preventDefault();
+    const skill = document.skillsForm.skill.value;
+    this.setState((prevState) => {
+      return { skills: [...prevState.skills, skill]}
+    })
+    const close = document.querySelector('#closeForm');
+    close.click();
+  }
+
   render() {
     return (
       <div className="skills">
-        <form className="none" name="skills">
+        <div className="flex">
+          {this.state.skills.map(skill => <div className="skill">{skill}</div>)}
+        </div>
+        <form className="none" name="skillsForm">
           <div>
             <label form="skills">Skills</label>
-            <input placeholder="Add your top skills!" name="skills"/>
-            <button onClick={cancel}>Cancel</button>
-            <button onClick={addSkill}>+ skill</button>
+            <input placeholder="Add your top skills!" name="skill"/>
+            <button id="closeForm" onClick={cancel}>Cancel</button>
+            <button onClick={this.addSkill}>+ skill</button>
           </div>
         </form>
         <button id="addForm" onClick={handleClick}>Add skill</button>
