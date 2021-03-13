@@ -35,15 +35,25 @@ class Skills extends Component {
     close.click();
   }
 
+  removeSkill = (e) => {
+    console.log(this, e.target);
+    const skill = e.target.parentElement;
+    const key = skill.getAttribute('data-id');
+    const skills = skill.parentElement;
+    console.log(skill, key, skills);
+  }
+
   render() {
     return (
       <div className="skills">
         <h3>Skills</h3>
         <div className="flex">
-          {this.state.skills.map(skill => <div className="skill">
-            {skill}
-            <button>x</button>
-          </div>)}
+          {this.state.skills.map((skill) =>
+            <div className="skill">
+              {skill.skill}
+              <button onClick={this.removeSkill}>x</button>
+            </div>)
+          }
         </div>
         <form className="none" name="skillsForm">
           <div>
