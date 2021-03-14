@@ -11,6 +11,14 @@ hr {
     border: 1px solid #1DBFAF;
 }
 
+button {
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
 header {
     height: 10vh;
     background: #1DBFAF;
@@ -22,12 +30,13 @@ footer {
     bottom: 0;
     height: 10vh;
     width: 100%;
+    color: white;
     text-align: center;
     background: #1DBFAF;
 }
 
 header h1 {
-    padding-top: 30px;
+    padding-top: 20px;
     color: white;
     font-family: "Lucida Handwriting", sans-serif;
 }
@@ -40,7 +49,8 @@ header h1 {
     background: white;
     margin: 20px auto;
     padding: 20px;
-    width: 800px;
+    width: 900px;
+    height: 600px;
     overflow-y: scroll;
 }
 
@@ -73,6 +83,10 @@ header h1 {
     color: #313C4E;
 }
 
+.general .image {
+    flex: 1;
+}
+
 #designation {
     color: #1DBFAF;
 }
@@ -81,8 +95,12 @@ header h1 {
     margin-right: 5px;
 }
 
+#links p {
+    margin: 0;
+}
+
 .general div {
-    flex: 1;
+    flex: 2;
 }
 
 .profile-pic {
@@ -106,8 +124,15 @@ img {
 }
 
 #links div{
-    margin-left: 50px;
     padding: 10px;
+    display: flex;
+    flex: 0;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#links p {
+    font-size: 14px;
 }
 
 .employment {
