@@ -72,23 +72,36 @@ class Employment extends Component {
           }
         </div>
         <form className="none" name="jobsForm">
-          <label>Role</label>
-          <input placeholder="Role" name="role"/>
+          <div>
+            <label>Role</label>
+            <input placeholder="Role" name="role"/>
+          </div>
 
-          <label>Company Name</label>
-          <input placeholder="Company Name" name="company"/>
+          <div>
+            <label>Company Name</label>
+            <input placeholder="Company Name" name="company"/>
+          </div>
 
-          <label>From</label>
-          <input placeholder="DD/MM/YYYY" name="from"/>
+          <div className="duration flex">
+            <div>
+              <label>From</label>
+              <input placeholder="DD/MM/YYYY" name="from"/>
+            </div>
+            <div>
+              <label>To</label>
+              <input placeholder="DD/MM/YYYY or Present" name="to"/>
+            </div>
+          </div>
 
-          <label>TO </label>
-          <input placeholder="DD/MM/YYYY or Present" name="to"/>
+          <div>
+            <label>City</label>
+            <input placeholder="City" name="city"/>
+          </div>
 
-          <label>City</label>
-          <input placeholder="City" name="city"/>
-
-          <label>Description</label>
-          <input placeholder="Responsibilities and achievements" name="description"/>
+          <div>
+            <label>Description</label>
+            <input placeholder="Responsibilities and achievements" name="description"/>
+          </div>
 
           <button className="closeForm" onClick={cancel}>Cancel</button>
           <button onClick={this.addExperience}>+ Experience</button>

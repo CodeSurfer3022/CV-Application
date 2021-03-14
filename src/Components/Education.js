@@ -72,23 +72,37 @@ class Education extends Component{
           }
         </div>
         <form className="none" name="educationsForm">
+          <div>
           <label>University or School Name</label>
           <input placeholder="University" name="school"/>
+          </div>
 
-          <label>Degree or stream</label>
-          <input placeholder="Degree" name="degree"/>
+          <div>
+            <label>Degree or stream</label>
+            <input placeholder="Degree" name="degree"/>
+          </div>
 
-          <label>From</label>
-          <input placeholder="DD/MM/YYYY" name="from"/>
+          <div className="duration flex">
+            <div>
+              <label>From</label>
+              <input placeholder="DD/MM/YYYY" name="from"/>
+            </div>
 
-          <label>TO </label>
-          <input placeholder="DD/MM/YYYY or Present" name="to"/>
+            <div>
+              <label>To</label>
+              <input placeholder="DD/MM/YYYY or Present" name="to"/>
+            </div>
+          </div>
 
-          <label>City</label>
-          <input placeholder="City" name="city"/>
+          <div>
+            <label>City</label>
+            <input placeholder="City" name="city"/>
+          </div>
 
-          <label>Description</label>
-          <input placeholder="Responsibilities and achievements" name="description"/>
+          <div>
+            <label>Description</label>
+            <input placeholder="Responsibilities and achievements" name="description"/>
+          </div>
 
           <button className="closeForm" onClick={cancel}>Cancel</button>
           <button onClick={this.addEducation}>+ Education</button>

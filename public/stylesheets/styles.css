@@ -92,8 +92,8 @@ header h1 {
     border-radius: 50%;
     border: 3px solid #1DBFAF;
     overflow: hidden;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     position: absolute;
     top:0;
     bottom: 0;
@@ -161,4 +161,10 @@ button {
     font-size: 1em;
 }
 
+.duration {
+    justify-content: space-between;
+}
 
+.duration div {
+    width: 45%;
+}
