@@ -10,7 +10,7 @@ function handleClick(e) {
 
 function cancel(e) {
   e.preventDefault();
-  const btn = document.querySelector('.projects').querySelector('#addForm');
+  const btn = document.querySelector('.projects').querySelector('.addForm');
   console.log(btn);
   const form = document.querySelector('form[name="projectsForm"]');
   form.classList.add('none');
@@ -33,8 +33,17 @@ class Projects extends Component{
     this.setState((prevState) => {
       return { projects: [...prevState.projects, {title, description}]}
     })
-    const close = document.querySelector('.projects').querySelector('#closeForm');
+    const close = document.querySelector('.projects').querySelector('.closeForm');
     close.click();
+  }
+
+  removeProject = (e) => {
+    const div = e.target.parentElement;
+    const key = div.getAttribute('key');
+    this.setState(prevState => {
+      return {projects: prevState.projects.splice(key,1)}
+    })
+    console.log(key);
   }
 
   render() {
@@ -42,11 +51,13 @@ class Projects extends Component{
       <div className="projects">
         <h3>Projects</h3>
         <div>
-          {this.state.projects.map(project => <div>
-            {project.title}
-            {project.description}
-            <button>x</button>
-          </div>)}
+          {this.state.projects.map((project, index) =>
+            <div className="project" key={index}>
+              {project.title}
+              {project.description}
+              <button onClick={this.removeProject}>x</button>
+            </div>)
+          }
         </div>
         <form className="none" name="projectsForm">
           <div>
@@ -55,11 +66,11 @@ class Projects extends Component{
             <label>Description</label>
             <input placeholder="A brief description of your project" name="description"/>
 
-            <button id="closeForm" onClick={cancel}>Cancel</button>
+            <button className="closeForm" onClick={cancel}>Cancel</button>
             <button type="submit" onClick={this.addProject}>+ project</button>
           </div>
         </form>
-        <button id="addForm" onClick={handleClick}>Add Projects</button>
+        <button className="addForm" onClick={handleClick}>Add Projects</button>
       </div>
     )
   }

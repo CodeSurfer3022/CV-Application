@@ -3,8 +3,8 @@ import React from "react";
 function JobComponent(props) {
   console.log(props.details)
   return(
-    <div>
-      <div className="flex overview">
+    <div className="job">
+      <div className="flex overview" key={props.index}>
         <div>
           <p>{props.details.role}</p>
           <p>{props.details.company}</p>
@@ -17,7 +17,7 @@ function JobComponent(props) {
       <div>
         <p>{props.details.description}</p>
       </div>
-      <button>x</button>
+      <button onClick={props.removeExperience}>x</button>
     </div>
   )
 }

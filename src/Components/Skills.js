@@ -10,7 +10,7 @@ function handleClick(e) {
 
 function cancel(e) {
   e.preventDefault();
-  const btn = document.querySelector('#addForm');
+  const btn = document.querySelector('.skills').querySelector('.addForm');
   console.log(btn);
   const form = document.querySelector('form[name="skillsForm"]');
   form.classList.add('none');
@@ -31,16 +31,17 @@ class Skills extends Component {
     this.setState((prevState) => {
       return { skills: [...prevState.skills, skill]}
     })
-    const close = document.querySelector('.skills').querySelector('#closeForm');
+    const close = document.querySelector('.skills').querySelector('.closeForm');
     close.click();
   }
 
   removeSkill = (e) => {
-    console.log(this, e.target);
-    const skill = e.target.parentElement;
-    const key = skill.getAttribute('data-id');
-    const skills = skill.parentElement;
-    console.log(skill, key, skills);
+    const div = e.target.parentElement;
+    const key = div.getAttribute('key');
+    this.setState(prevState => {
+      return {skills: prevState.skills.splice(key,1)}
+    })
+    console.log(key);
   }
 
   render() {
@@ -48,9 +49,9 @@ class Skills extends Component {
       <div className="skills">
         <h3>Skills</h3>
         <div className="flex">
-          {this.state.skills.map((skill) =>
-            <div className="skill">
-              {skill.skill}
+          {this.state.skills.map((skill, index) =>
+            <div className="skill" key={index}>
+              <span>{skill}</span>
               <button onClick={this.removeSkill}>x</button>
             </div>)
           }
@@ -58,11 +59,11 @@ class Skills extends Component {
         <form className="none" name="skillsForm">
           <div>
             <input id="skill" placeholder="Add your top skills!" name="skill"/>
-            <button id="closeForm" onClick={cancel}>Cancel</button>
+            <button className="closeForm" onClick={cancel}>Cancel</button>
             <button onClick={this.addSkill}>+ skill</button>
           </div>
         </form>
-        <button id="addForm" onClick={handleClick}>Add skills</button>
+        <button className="addForm" onClick={handleClick}>Add skills</button>
       </div>
     )
   }

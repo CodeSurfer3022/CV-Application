@@ -11,7 +11,7 @@ function handleClick(e) {
 
 function cancel(e) {
   e.preventDefault();
-  const btn = document.querySelector('.projects').querySelector('#addForm');
+  const btn = document.querySelector('.jobs').querySelector('.addForm');
   console.log(btn);
   const form = document.querySelector('form[name="jobsForm"]');
   form.classList.add('none');
@@ -44,8 +44,16 @@ class Employment extends Component {
       }
     })
 
-    const close = document.querySelector('.jobs').querySelector('#closeForm');
+    const close = document.querySelector('.jobs').querySelector('.closeForm');
     close.click();
+  }
+
+  removeExperience = (e) => {
+    const div = e.target.parentElement;
+    const key = div.getAttribute('key');
+    this.setState(prevState => {
+      return {projects: prevState.jobs.splice(key,1)}
+    })
   }
 
   render() {
@@ -53,7 +61,14 @@ class Employment extends Component {
       <div className="jobs">
         <h3>Employment</h3>
         <div>
-          {this.state.jobs.map(job => <JobComponent details={job}/>)}
+          {this.state.jobs.map((job, index) =>
+            <JobComponent
+              key={index}
+              index={index}
+              details={job}
+              removeExperience={this.removeExperience}
+            />)
+          }
         </div>
         <form className="none" name="jobsForm">
           <label>Role</label>
@@ -74,10 +89,10 @@ class Employment extends Component {
           <label>Description</label>
           <input placeholder="Responsibilities and achievements" name="description"/>
 
-          <button id="closeForm" onClick={cancel}>Cancel</button>
+          <button className="closeForm" onClick={cancel}>Cancel</button>
           <button onClick={this.addExperience}>+ Experience</button>
         </form>
-        <button onClick={handleClick}>Add Work experience</button>
+        <button className="addForm" onClick={handleClick}>Add Work experience</button>
       </div>
     )
   }

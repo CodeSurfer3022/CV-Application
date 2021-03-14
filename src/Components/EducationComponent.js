@@ -2,7 +2,7 @@ import React from "react";
 
 function EducationComponent(props) {
   return(
-    <div>
+    <div className="education" key={props.index}>
       <div className="flex overview">
         <div>
           <p>{props.details.school}</p>
@@ -16,7 +16,7 @@ function EducationComponent(props) {
       <div>
         <p>{props.details.description}</p>
       </div>
-      <button>x</button>
+      <button onClick={props.removeEducation}>x</button>
     </div>
   )
 }

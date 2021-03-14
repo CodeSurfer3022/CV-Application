@@ -11,7 +11,7 @@ function handleClick(e) {
 
 function cancel(e) {
   e.preventDefault();
-  const btn = document.querySelector('.educations').querySelector('#addForm');
+  const btn = document.querySelector('.educations').querySelector('.addForm');
   console.log(btn);
   const form = document.querySelector('form[name="educationsForm"]');
   form.classList.add('none');
@@ -44,8 +44,16 @@ class Education extends Component{
       }
     })
 
-    const close = document.querySelector('.jobs').querySelector('#closeForm');
+    const close = document.querySelector('.educations').querySelector('.closeForm');
     close.click();
+  }
+
+  removeEducation = (e) => {
+    const div = e.target.parentElement;
+    const key = div.getAttribute('key');
+    this.setState(prevState => {
+      return {projects: prevState.educations.splice(key,1)}
+    })
   }
 
   render() {
@@ -53,7 +61,14 @@ class Education extends Component{
       <div className="educations">
         <h3>Education</h3>
         <div>
-          {this.state.educations.map(education => <EducationComponent details={education}/>)}
+          {this.state.educations.map((education, index) =>
+            <EducationComponent
+              key={index}
+              index={index}
+              details={education}
+              removeEducation={this.removeEducation}
+            />)
+          }
         </div>
         <form className="none" name="educationsForm">
           <label>University or School Name</label>
@@ -74,10 +89,10 @@ class Education extends Component{
           <label>Description</label>
           <input placeholder="Responsibilities and achievements" name="description"/>
 
-          <button id="closeForm" onClick={cancel}>Cancel</button>
+          <button className="closeForm" onClick={cancel}>Cancel</button>
           <button onClick={this.addEducation}>+ Education</button>
         </form>
-        <button id="addForm" onClick={handleClick}>Add Education</button>
+        <button className="addForm" onClick={handleClick}>Add Education</button>
       </div>
     )
   }
