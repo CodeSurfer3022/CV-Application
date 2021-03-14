@@ -48,6 +48,7 @@ class Skills extends Component {
     return (
       <div className="skills">
         <h3>Skills</h3>
+        <hr />
         <div className="flex">
           {this.state.skills.map((skill, index) =>
             <div className="skill" key={index}>
@@ -57,7 +58,7 @@ class Skills extends Component {
           }
         </div>
         <form className="none" name="skillsForm">
-          <div>
+          <div className="skillsForm">
             <input id="skill" placeholder="Add your top skills!" name="skill"/>
             <button className="closeForm" onClick={cancel}>Cancel</button>
             <button onClick={this.addSkill}>+ skill</button>

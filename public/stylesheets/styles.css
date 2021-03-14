@@ -3,21 +3,6 @@ body {
     background: slategray;
 }
 
-label {
-    display: block;
-}
-
-hr {
-    border: 1px solid #1DBFAF;
-}
-
-button {
-    border: none;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1em;
-}
 
 header {
     height: 10vh;
@@ -49,7 +34,7 @@ header h1 {
     background: white;
     margin: 20px auto;
     padding: 20px;
-    width: 900px;
+    width: 800px;
     height: 600px;
     overflow-y: scroll;
 }
@@ -145,6 +130,26 @@ img {
 }
 
 .skills {
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    font-size: large;
+}
+
+hr {
+    border: 1px solid #1DBFAF;
+}
+
+button {
+    border: none;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
 }
 
 
