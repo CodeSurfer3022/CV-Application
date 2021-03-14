@@ -60,6 +60,7 @@ class Employment extends Component {
     return (
       <div className="jobs">
         <h3>Employment</h3>
+        <hr />
         <div>
           {this.state.jobs.map((job, index) =>
             <JobComponent

@@ -50,6 +50,7 @@ class Projects extends Component{
     return (
       <div className="projects">
         <h3>Projects</h3>
+        <hr />
         <div>
           {this.state.projects.map((project, index) =>
             <div className="project" key={index}>

@@ -1,27 +1,51 @@
 body {
     font-family: "Helvetica Neue", sans-serif;
-    background: gray;
+    background: slategray;
 }
 
 label {
     display: block;
 }
 
+hr {
+    border: 1px solid #1DBFAF;
+}
+
 header {
-    height: 100px;
-    background: red;
+    height: 10vh;
+    background: #1DBFAF;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+    background: #1DBFAF;
 }
 
 header h1 {
+    padding-top: 30px;
     color: white;
     font-family: "Lucida Handwriting", sans-serif;
 }
 
+#root {
+    height: 80vh;
+}
+
 .App {
     background: white;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     width: 800px;
+    overflow-y: scroll;
+}
+
+.App > div {
+    margin-top: 20px;
 }
 
 .flex {
@@ -63,6 +87,7 @@ header h1 {
 
 .profile-pic {
     border-radius: 50%;
+    border: 3px solid #1DBFAF;
     overflow: hidden;
     height: 100px;
     width: 100px;
@@ -95,13 +120,6 @@ img {
 }
 
 .skills {
-    margin-top: 20px;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    background: red;
-}
+

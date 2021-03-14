@@ -60,6 +60,7 @@ class Education extends Component{
     return (
       <div className="educations">
         <h3>Education</h3>
+        <hr />
         <div>
           {this.state.educations.map((education, index) =>
             <EducationComponent
