@@ -132,11 +132,20 @@ img {
 .skills {
 }
 
+.projectsForm div {
+    margin: 10px 0;
+}
+
 input {
     display: block;
     width: 100%;
     padding: 10px 5px;
     font-size: large;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
 }
 
 hr {

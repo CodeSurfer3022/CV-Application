@@ -61,11 +61,16 @@ class Projects extends Component{
           }
         </div>
         <form className="none" name="projectsForm">
-          <div>
-            <label>Title</label>
-            <input placeholder="Title of your project" name="title"/>
-            <label>Description</label>
-            <input placeholder="A brief description of your project" name="description"/>
+          <div className="projectsForm">
+            <div>
+              <label>Title</label>
+              <input placeholder="Title of your project" name="title"/>
+            </div>
+
+            <div>
+              <label>Description</label>
+              <input placeholder="A brief description of your project" name="description"/>
+            </div>
 
             <button className="closeForm" onClick={cancel}>Cancel</button>
             <button type="submit" onClick={this.addProject}>+ project</button>
