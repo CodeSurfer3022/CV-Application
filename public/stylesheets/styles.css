@@ -1,9 +1,6 @@
 body {
     font-family: "Helvetica Neue", sans-serif;
-}
-
-.none {
-    display: none;
+    background: gray;
 }
 
 label {
@@ -15,13 +12,16 @@ header {
     background: red;
 }
 
-#root {
-    border: 2px solid blue;
-    margin: 20px auto;
+header h1 {
+    color: white;
+    font-family: "Lucida Handwriting", sans-serif;
+}
+
+.App {
+    background: white;
+    margin: 0 auto;
     padding: 20px;
     width: 800px;
-    height: 500px;
-    overflow-y: scroll;
 }
 
 .flex {
@@ -37,13 +37,24 @@ header {
 }
 
 .description {
-    background: darkcyan;
 }
 
 /* style each component*/
+.none {
+    display: none;
+}
+
 .general {
-    background: #337be5;
     position: relative;
+    color: #313C4E;
+}
+
+#designation {
+    color: #1DBFAF;
+}
+
+#links svg{
+    margin-right: 5px;
 }
 
 .general div {
@@ -75,19 +86,16 @@ img {
 }
 
 .employment {
-    background: lightgray;
 }
 
 .education {
-    background: antiquewhite;
 }
 
 .projects {
-    background: beige;
 }
 
 .skills {
-    background: azure;
+    margin-top: 20px;
 }
 
 footer {
