@@ -4,7 +4,7 @@ function JobComponent(props) {
   console.log(props.details)
   return(
     <div className="job">
-      <div className="flex overview" key={props.index}>
+      <div className="flex overview" data-index={props.index}>
         <div>
           <p>{props.details.role}</p>
           <p>{props.details.company}</p>

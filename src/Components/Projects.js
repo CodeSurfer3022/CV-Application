@@ -39,11 +39,11 @@ class Projects extends Component{
 
   removeProject = (e) => {
     const div = e.target.parentElement;
-    const key = div.getAttribute('key');
+    const index = div.getAttribute('data-index');
     this.setState(prevState => {
-      return {projects: prevState.projects.splice(key,1)}
+      prevState.projects.splice(index,1)
+      return {projects: prevState.projects}
     })
-    console.log(key);
   }
 
   render() {
@@ -53,10 +53,11 @@ class Projects extends Component{
         <hr />
         <div>
           {this.state.projects.map((project, index) =>
-            <div className="project" key={index}>
-              {project.title}
-              {project.description}
-              <button onClick={this.removeProject}>x</button>
+            <div className="project" key={index} data-index={index}>
+              <ul>
+                <li><b>{project.title}</b> {project.description}</li>
+              </ul>
+              <button onClick={this.removeProject}>Remove project</button>
             </div>)
           }
         </div>

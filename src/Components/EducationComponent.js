@@ -2,7 +2,7 @@ import React from "react";
 
 function EducationComponent(props) {
   return(
-    <div className="education" key={props.index}>
+    <div className="education" data-index={props.index}>
       <div className="flex overview">
         <div>
           <p>{props.details.school}</p>

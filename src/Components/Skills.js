@@ -37,11 +37,14 @@ class Skills extends Component {
 
   removeSkill = (e) => {
     const div = e.target.parentElement;
-    const key = div.getAttribute('key');
+    console.log(div);
+    const index = +div.getAttribute('data-index');
+    console.log(index);
+
     this.setState(prevState => {
-      return {skills: prevState.skills.splice(key,1)}
+      prevState.skills.splice(index,1);
+      return {skills: prevState.skills}
     })
-    console.log(key);
   }
 
   render() {
@@ -51,7 +54,7 @@ class Skills extends Component {
         <hr />
         <div className="flex">
           {this.state.skills.map((skill, index) =>
-            <div className="skill flex" key={index}>
+            <div className="skill flex" key={index} data-index={index}>
               <p>{skill}</p>
               <button onClick={this.removeSkill}>+</button>
             </div>)

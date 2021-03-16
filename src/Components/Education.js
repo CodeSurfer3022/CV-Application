@@ -50,9 +50,10 @@ class Education extends Component{
 
   removeEducation = (e) => {
     const div = e.target.parentElement;
-    const key = div.getAttribute('key');
+    const index = div.getAttribute('data-index');
     this.setState(prevState => {
-      return {projects: prevState.educations.splice(key,1)}
+      prevState.educations.splice(index,1)
+      return {projects: prevState.educations}
     })
   }
 

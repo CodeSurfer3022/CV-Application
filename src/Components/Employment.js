@@ -50,9 +50,10 @@ class Employment extends Component {
 
   removeExperience = (e) => {
     const div = e.target.parentElement;
-    const key = div.getAttribute('key');
+    const index = div.getAttribute('data-index');
     this.setState(prevState => {
-      return {projects: prevState.jobs.splice(key,1)}
+      prevState.jobs.splice(index,1)
+      return {projects: prevState.jobs}
     })
   }
 
