@@ -191,6 +191,9 @@ button {
     font-size: 1em;
 }
 
+button:focus{
+    outline: none;
+}
 .duration {
     justify-content: space-between;
 }
