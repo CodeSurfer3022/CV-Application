@@ -29,13 +29,13 @@ class Employment extends Component {
 
   addExperience = (e) => {
     e.preventDefault();
-    const {role, name, from, to, city, description} = document.jobsForm;
+    const {role, company, from, to, city, description} = document.jobsForm;
 
     this.setState((prevState) => {
       return {
         jobs: [...prevState.jobs, {
           role: role.value,
-          company: name.value,
+          company: company.value,
           from: from.value,
           to: to.value,
           city: city.value,

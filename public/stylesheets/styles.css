@@ -125,7 +125,8 @@ img {
     font-size: 14px;
 }
 
-.employment {
+.job .overview{
+    justify-content: space-between;
 }
 
 .education {
@@ -200,4 +201,8 @@ button:focus{
 
 .duration div {
     width: 45%;
+}
+
+.timePlace {
+    color: #138076;
 }
