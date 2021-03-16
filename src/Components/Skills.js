@@ -51,9 +51,9 @@ class Skills extends Component {
         <hr />
         <div className="flex">
           {this.state.skills.map((skill, index) =>
-            <div className="skill" key={index}>
-              <span>{skill}</span>
-              <button onClick={this.removeSkill}>x</button>
+            <div className="skill flex" key={index}>
+              <p>{skill}</p>
+              <button onClick={this.removeSkill}>+</button>
             </div>)
           }
         </div>

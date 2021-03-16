@@ -45,6 +45,7 @@ header h1 {
 
 .flex {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .App * *:hover {
@@ -134,6 +135,31 @@ img {
 }
 
 .skills {
+}
+
+.skill {
+    background: #989DA6;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.skill p {
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+}
+
+.skill button {
+    margin:0 0 0 5px;
+    text-align: center;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    transform: rotate(-45deg);
 }
 
 .projectsForm div {
