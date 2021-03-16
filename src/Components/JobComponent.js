@@ -17,7 +17,7 @@ function JobComponent(props) {
       <div>
         <p>{props.details.description}</p>
       </div>
-      <button onClick={props.removeExperience}>x</button>
+      <button onClick={props.removeExperience}>Remove experience</button>
     </div>
   )
 }

@@ -5,10 +5,10 @@ function EducationComponent(props) {
     <div className="education" data-index={props.index}>
       <div className="flex overview">
         <div>
-          <p>{props.details.school}</p>
+          <p><b>{props.details.school}</b></p>
           <p>{props.details.degree}</p>
         </div>
-        <div>
+        <div className="timePlace">
           <p>{props.details.from} - {props.details.to}</p>
           <p>{props.details.city}</p>
         </div>
@@ -16,7 +16,7 @@ function EducationComponent(props) {
       <div>
         <p>{props.details.description}</p>
       </div>
-      <button onClick={props.removeEducation}>x</button>
+      <button onClick={props.removeEducation}>Remove education</button>
     </div>
   )
 }

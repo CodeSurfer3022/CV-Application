@@ -102,7 +102,7 @@ class Education extends Component{
 
           <div>
             <label>Description</label>
-            <input placeholder="Responsibilities and achievements" name="description"/>
+            <input placeholder="Grades and achievements" name="description"/>
           </div>
 
           <button className="closeForm" onClick={cancel}>Cancel</button>
